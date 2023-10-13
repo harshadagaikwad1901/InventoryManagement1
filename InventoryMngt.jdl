@@ -1,0 +1,184 @@
+
+entity RawMaterial {
+	 name String
+     barcode String 
+     quantity Double
+     unitPrice Double
+     unitMeasure Unit
+     gstPercentage Double 
+     reorderPoint Double 
+	 warehouseId Long 
+}
+
+entity Warehouse {
+	whName String
+    address String
+    pincode Long
+    city String
+    managerName String
+    managerEmail String
+}
+
+entity Clients {
+	sname String
+	semail String
+    mobileNo Long
+    companyName String
+    companyContactNo Long
+    address String
+	pinCode String
+	city String
+    clientType ClientType
+}
+
+entity PurchaseQuotation {
+	referenceNumber String
+    totalPOAmount Double
+    totalGSTAmount Double
+    poDate Instant
+    expectedDeliveryDate Instant
+    orderStatus Status
+	clientId Long
+}
+
+entity PurchaseQuotationDetails {
+	qtyOrdered Double
+    gstTaxPercentage Integer
+    pricePerUnit Double
+    totalPrice Double
+    discount Double
+	purchaseQuotationId Long
+}
+
+entity OrderRecieved {
+	referenceNumber String
+    orDate Instant
+    qtyOrdered Double
+    qtyRecieved Double
+    manufacturingDate Instant
+	expiryDate Instant
+    qtyApproved Double
+    qtyRejected Double
+	purchaseQuotationId Long
+}
+
+entity PurchaseRequest{
+	qtyRequired Double
+    requestDate Instant
+    expectedDate Instant
+    status Status
+	rawMaterialName String
+}
+
+
+entity SalesOrderd {
+	orderDate Instant
+	quantitySold Double
+    unitPrice Double
+    gstPercentage Double
+    totalRevenue Double
+    status DeliveryStatus
+	clientId Long
+}
+entity Projects{
+	projectName String
+    startDate Instant
+    endDate Instant
+    orderQuantity Long
+    estimatedBudget Double
+    finalTotal Double
+}
+
+entity Products{
+	productName String
+    availableQty Double
+	manufacturingCost Double
+	labourCost Double
+}
+
+entity RawMaterialConsumption{
+	projectId Long
+    productId Long
+    productionLine Long
+    rawMaterialId Long
+	quantityConsumed Double
+    scrapGenerated Double
+    totalMaterialCost Double
+}
+
+entity ProductConsumption{
+	projectId Long
+    productId Long
+	productConsumeId Long
+	quantityConsumed Double
+    totalProductsCost Double	
+}
+
+entity TotalConsumption{
+	projectId Long
+    productId Long
+    totalMaterialCost Double
+ 	totalProductsCost Double
+    finalCost Double
+}
+entity ProductionLine{
+	description String
+    isActive Boolean 
+    productId Long
+}
+
+entity StockRequest{
+	qtyRequired Double
+    reqDate Instant
+    isProd Boolean
+    status Status
+    rawMaterialId Long
+    productId Long
+    productionLineId Long
+    projectId Long
+}
+
+entity ProductsUsed{
+    productId Long
+    productConsumed Long
+}
+enum Unit {
+    UNIT, KG , METRE
+}
+
+enum Status{
+	REQUESTED(Requested),
+    APPROVED(Approved),
+    CANCELED(Canceled),
+    RECEIVED(Received),
+    COMPLETED(Completed)
+}
+
+enum ClientType{
+	SUPPLIER(Supplier),
+    CONSUMER(Consumer),
+    BOTH(Both),
+    OTHER(Other)
+}
+
+enum DeliveryStatus{
+	ORDERED, SHIPPED, DELIVERED
+}
+
+relationship ManyToMany{
+	RawMaterial{products} to Products{rawMaterial} 
+}
+
+// Set pagination options
+paginate * with infinite-scroll
+paginate * with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service * with serviceClass
+
+filter *
+// Set an angular suffix
+// angularSuffix * with tvg

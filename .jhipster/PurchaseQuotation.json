@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20231011054234",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "purchase_quotation",
+  "fields": [
+    {
+      "fieldName": "referenceNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalPOAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalGSTAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "poDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "expectedDeliveryDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "orderStatus",
+      "fieldType": "Status",
+      "fieldValues": "REQUESTED (Requested),APPROVED (Approved),CANCELED (Canceled),RECEIVED (Received),COMPLETED (Completed)"
+    },
+    {
+      "fieldName": "clientId",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "PurchaseQuotation",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

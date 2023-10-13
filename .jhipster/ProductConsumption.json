@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20231011054242",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "product_consumption",
+  "fields": [
+    {
+      "fieldName": "projectId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "productId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "productConsumeId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "quantityConsumed",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalProductsCost",
+      "fieldType": "Double"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ProductConsumption",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

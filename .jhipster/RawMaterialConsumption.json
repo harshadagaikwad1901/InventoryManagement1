@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20231011054241",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "raw_material_consumption",
+  "fields": [
+    {
+      "fieldName": "projectId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "productId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "productionLine",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "rawMaterialId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "quantityConsumed",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "scrapGenerated",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalMaterialCost",
+      "fieldType": "Double"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "RawMaterialConsumption",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

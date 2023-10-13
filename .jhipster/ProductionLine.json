@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20231011054244",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "production_line",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "productId",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ProductionLine",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

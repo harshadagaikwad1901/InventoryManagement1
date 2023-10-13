@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20231011054233",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "clients",
+  "fields": [
+    {
+      "fieldName": "sname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "semail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobileNo",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "companyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyContactNo",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pinCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientType",
+      "fieldType": "ClientType",
+      "fieldValues": "SUPPLIER (Supplier),CONSUMER (Consumer),BOTH (Both),OTHER (Other)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Clients",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
